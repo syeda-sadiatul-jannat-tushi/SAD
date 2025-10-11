@@ -11,6 +11,6 @@ void main(){
   stdout.write("Enter the number of people = ");
   int p= int.parse(stdin.readLineSync()!);
 
-  print("Formula= \$${(t) / p}");
+  print("Formula= ${(t) / p}");
 
 }
