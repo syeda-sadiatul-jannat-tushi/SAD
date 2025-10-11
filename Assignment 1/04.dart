@@ -10,5 +10,5 @@ void main(){
   stdout.write("Enter r: ");
   int r = int.parse(stdin.readLineSync()!);
 
-  print("Formula= ${(p * t * r) / 100}");
+  print("Simple interest= ${(p * t * r) / 100}");
 }
