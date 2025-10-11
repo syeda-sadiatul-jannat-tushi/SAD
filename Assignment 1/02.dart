@@ -5,7 +5,7 @@ void main(){
   print('Hello I am "John Doe"');
   print( 'Hello I\'am "John Doe"');
 
-  //Double qutes
+  //Double quotes
   print("Hello I am \"John Doe\"");
   print( "Hello I'am \"John Doe\"");
 }
