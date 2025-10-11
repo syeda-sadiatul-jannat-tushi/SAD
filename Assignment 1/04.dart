@@ -4,11 +4,11 @@ import 'dart:io';
 
 void main(){
   stdout.write("Enter p : ");
-  double p = double.parse(stdin.readLineSync()!);
+  int p = int.parse(stdin.readLineSync()!);
   stdout.write("Enter t: ");
-  double t = double.parse(stdin.readLineSync()!);
+  int t = int.parse(stdin.readLineSync()!);
   stdout.write("Enter r: ");
-  double r = double.parse(stdin.readLineSync()!);
+  int r = int.parse(stdin.readLineSync()!);
 
   print("Formula= ${(p * t * r) / 100}");
 }
