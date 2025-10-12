@@ -8,5 +8,6 @@ void main(){
   int p= int.parse(s);
 
   print("Int = $p");
+  print("Type of p is ${p.runtimeType}");
 
 }
