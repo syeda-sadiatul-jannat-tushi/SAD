@@ -7,4 +7,5 @@ bool isEven(int n){
 
 void main(){
     print("The number is even = ${isEven(13)}");
+    print("The number is even = ${isEven(20)}");
 }
