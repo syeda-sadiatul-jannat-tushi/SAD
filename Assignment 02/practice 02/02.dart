@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main(){
-    stdout.write("Enter the Number: ");
+    stdout.write("Enter the character: ");
     String c = (stdin.readLineSync()!);
 
     c = c.toLowerCase();
