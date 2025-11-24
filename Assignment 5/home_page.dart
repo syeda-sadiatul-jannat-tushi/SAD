@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: lightRed,
 
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 104, 60, 60),
+        backgroundColor: darkRed,
         elevation: 4,
         title: const Text(
           "Homepage",
@@ -40,34 +40,26 @@ class HomePage extends StatelessWidget {
               accountEmail: const Text("your@email.com"),
               currentAccountPicture: const CircleAvatar(
                 backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 40, color: Color.fromARGB(255, 104, 60, 60)),
+                child: Icon(Icons.person, size: 40, color: darkRed),
               ),
             ),
 
             ListTile(
-              leading: const Icon(Icons.home, color: Color.fromARGB(255, 104, 60, 60)),
+              leading: const Icon(Icons.home, color: darkRed),
               title: const Text("Home"),
-              onTap: () {},
             ),
-
             ListTile(
-              leading: const Icon(Icons.person, color: Color.fromARGB(255, 104, 60, 60)),
+              leading: const Icon(Icons.person, color: darkRed),
               title: const Text("Profile"),
-              onTap: () {},
             ),
-
             ListTile(
-              leading: const Icon(Icons.settings, color: Color.fromARGB(255, 104, 60, 60)),
+              leading: const Icon(Icons.settings, color: darkRed),
               title: const Text("Settings"),
-              onTap: () {},
             ),
-
             const Divider(),
-
             ListTile(
-              leading: const Icon(Icons.logout, color: Color.fromARGB(255, 104, 60, 60)),
+              leading: const Icon(Icons.logout, color: darkRed),
               title: const Text("Logout"),
-              onTap: () {},
             ),
           ],
         ),
@@ -75,8 +67,9 @@ class HomePage extends StatelessWidget {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: Color.fromARGB(255, 104, 60, 60),
-        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: darkRed,
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add, color: Colors.white, size: 25),
       ),
 
       body: Padding(
@@ -87,21 +80,21 @@ class HomePage extends StatelessWidget {
           children: [
 
             const Text(
-              "Welcome to Tushi's page!",
+              "Welcome to your page!",
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 104, 60, 60),
+                color: darkRed,
               ),
             ),
 
             const SizedBox(height: 10),
 
-            const Text(
+            Text(
               "Explore your dashboard below.",
               style: TextStyle(
                 fontSize: 16,
-                color: Color.fromARGB(179, 143, 108, 108),
+                color: darkRed.withOpacity(0.7),
               ),
             ),
 
@@ -109,9 +102,9 @@ class HomePage extends StatelessWidget {
 
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
+                crossAxisCount: 4,      
+                crossAxisSpacing: 20,  
+                childAspectRatio: 1,    
                 children: [
                   dashboardCard(Icons.person, "Profile", darkRed),
                   dashboardCard(Icons.settings, "Settings", darkRed),
@@ -134,22 +127,22 @@ class HomePage extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: color.withOpacity(0.3),
-            blurRadius: 6,
+            blurRadius: 8,
             spreadRadius: 2,
-            offset: const Offset(2, 2),
+            offset: const Offset(2, 3),
           ),
         ],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 40, color: color),
-          const SizedBox(height: 10),
+          Icon(icon, size: 40, color: color),    
+          const SizedBox(height: 12),
           Text(
             title,
             style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+              fontSize: 19,
+              fontWeight: FontWeight.bold,
               color: color,
             ),
           ),
