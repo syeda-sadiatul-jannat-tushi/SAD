@@ -27,8 +27,7 @@ class ListviewPage extends StatelessWidget {
         title: Text("List View Page"),
         backgroundColor: const Color.fromARGB(255, 68, 87, 118),
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      body: ListView.builder(
         itemCount: myItems.length,
         itemBuilder: (context, index) {
           return Card(
