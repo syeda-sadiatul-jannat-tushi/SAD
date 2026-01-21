@@ -7,7 +7,7 @@ class InputField extends StatelessWidget {
   final String hint;
   final IconData icon;
   final String? Function(String?)? validator;
-  final bool obscureText; // add this
+  final bool obscureText; 
 
   const InputField({
     super.key,
@@ -17,7 +17,7 @@ class InputField extends StatelessWidget {
     required this.hint,
     required this.icon,
     required this.validator,
-    this.obscureText = false, // default false
+    this.obscureText = false, 
   });
 
   @override
@@ -25,7 +25,7 @@ class InputField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       keyboardType: keyboardType,
-      obscureText: obscureText, // use the passed value
+      obscureText: obscureText, 
       validator: validator,
       decoration: InputDecoration(
         labelText: label,
@@ -40,3 +40,4 @@ class InputField extends StatelessWidget {
     );
   }
 }
+
