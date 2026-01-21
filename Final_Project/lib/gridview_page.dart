@@ -1,16 +1,14 @@
-// lib/gridview_page.dart
+
 import 'package:flutter/material.dart';
 import 'single_item_page.dart';
 import 'cart_model.dart';
 
 class GridviewPage extends StatelessWidget {
-  final Cart cart; // Add this
+  final Cart cart; 
 
-  GridviewPage({super.key, required this.cart}); // Make cart required
+  GridviewPage({super.key, required this.cart}); 
 
-  // your existing products list here...
 
-  // Baby Products
   final List<Map<String, dynamic>> products = [
     {
       "name": "Baby Teddy",
@@ -114,7 +112,7 @@ class GridviewPage extends StatelessWidget {
                     img: product["image"],
                     title: product["name"],
                     price: product["price"],
-                    cart: cart, // <-- pass the same cart
+                    cart: cart, 
                   ),
                 ),
               );
