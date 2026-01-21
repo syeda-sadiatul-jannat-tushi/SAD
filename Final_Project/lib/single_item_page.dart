@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cart_model.dart'; // Your Cart setup
+import 'cart_model.dart'; 
 
 class SingleItemPage extends StatelessWidget {
   final img, title;
@@ -80,3 +80,4 @@ class SingleItemPage extends StatelessWidget {
     );
   }
 }
+
