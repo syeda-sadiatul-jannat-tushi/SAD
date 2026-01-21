@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
       final user = authResponse.user;
 
       if (user != null) {
-        // Save extra user info in profiles table
+       
         await _supabase.from('profiles').insert({
           'id': user.id,
           'name': name,
@@ -76,7 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.pink[50], // soft pink background
+      backgroundColor: Colors.pink[50], 
       appBar: AppBar(
         title: const Text("Register to Mini Marvels"),
         backgroundColor: Colors.pink[200],
@@ -247,3 +247,4 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
+
