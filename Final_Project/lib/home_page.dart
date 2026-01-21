@@ -17,7 +17,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _supabase = Supabase.instance.client;
 
-  // Central cart instance for the app
+  
   final Cart cart = Cart();
 
   Future<Map<String, dynamic>?> getCurrentUser() async {
@@ -227,3 +227,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
