@@ -31,7 +31,6 @@ class _CartPageState extends State<CartPage> {
     });
 
     try {
-      // 1. Prepare order items
       final orderItems = items.map((item) {
         return {
           "name": item.name,
@@ -41,10 +40,10 @@ class _CartPageState extends State<CartPage> {
         };
       }).toList();
 
-      // 2. Get total
+      
       final int total = widget.cart.totalPrice();
 
-      // 3. Get user ID
+      
       final user = supabase.auth.currentUser;
       final String? userId = user?.id;
 
@@ -54,24 +53,22 @@ class _CartPageState extends State<CartPage> {
       print("User ID: ${userId ?? 'guest'}");
       print("Order items JSON: ${jsonEncode(orderItems)}");
 
-      // 4. Prepare the simplest possible data for Supabase
+      
       Map<String, dynamic> orderData = {
         "items": jsonDecode(
           jsonEncode(orderItems),
-        ), // Ensure proper JSON format
+        ), 
         "total_price": total,
-        // "status": "pending", // REMOVE THIS - your table might not have it
-        // "created_at" has default value in DB
       };
 
-      // Add user_id only if user exists
+      
       if (userId != null && userId.isNotEmpty) {
         orderData["user_id"] = userId;
       }
 
       print("Sending to Supabase: ${jsonEncode(orderData)}");
 
-      // 5. Try to insert WITHOUT status first
+      
       try {
         final response = await supabase
             .from('orders')
@@ -83,10 +80,10 @@ class _CartPageState extends State<CartPage> {
         print("✅ Order placed successfully!");
         print("Response: $response");
 
-        // Clear cart
+        
         widget.cart.clearCart();
 
-        // Navigate to success page
+        
         if (mounted) {
           Navigator.pushReplacement(
             context,
@@ -99,7 +96,7 @@ class _CartPageState extends State<CartPage> {
       } catch (firstError) {
         print("First attempt failed: $firstError");
 
-        // If failed, try without user_id
+        
         if (firstError.toString().contains('user_id') ||
             firstError.toString().contains('uuid')) {
           print("Retrying without user_id...");
