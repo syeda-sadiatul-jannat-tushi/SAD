@@ -15,8 +15,7 @@ class _SplashScreenState extends State<SplashScreen>
   late AnimationController _controller;
   late Animation<double> _animation;
   final Random _random = Random();
-  final int numStars = 20; // number of glitter stars
-
+  final int numStars = 20; 
   late List<double> _starX;
   late List<double> _starY;
 
@@ -24,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    // Animation for scaling the logo/text
+    
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -37,11 +36,11 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // Random positions for stars
+   
     _starX = List.generate(numStars, (_) => _random.nextDouble());
     _starY = List.generate(numStars, (_) => _random.nextDouble());
 
-    // Navigate to AuthGate after 3 seconds
+   
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -63,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen>
       child: Icon(
         Icons.star,
         color: Colors.yellowAccent.withOpacity(0.7),
-        size: 15 + _random.nextDouble() * 10, // random size
+        size: 15 + _random.nextDouble() * 10, 
       ),
     );
   }
